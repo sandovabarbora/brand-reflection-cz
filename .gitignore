@@ -1,0 +1,7 @@
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Private outreach drafts
+COVER_LETTER*.md
