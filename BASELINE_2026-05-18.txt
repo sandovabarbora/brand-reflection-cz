@@ -1,0 +1,17 @@
+# Baseline view counts at prediction date (2026-05-18, ~10:50 CET)
+# Captured via: yt-dlp --skip-download --print "%(id)s %(view_count)s likes=%(like_count)s %(title)s"
+
+# Coherent set (predicted TOP):
+dLDHfeOEp38   18660   likes=50   Pilsner Urquell - Alfons Mucha Ad
+NecSnK0H3Eo  851825   likes=35   Fakt si myslíš, že poznáš Priateľov? Dokáž to!  (McDonald's)
+Oz047619h6U  511921   likes= 2   Vše pro skvělé grilování. (Lidl)
+
+# Muddle / incongruity set (predicted BOTTOM):
+Dxbx6r6Jdvg  272017   likes= 4   Objevte nové gourmet receptury od Fresh Bistra (Albert)
+dGMa5T3_3N4  509694   likes= 9   Nejlepší pevný internet v Česku! (Vodafone)
+
+# Note: Pilsner's *Alfons* is a 2025 image spot with very low absolute views (~18K)
+# — image campaigns typically have lower paid promotion than promo spots. The
+# 30-day prediction tests *delta* not absolute, so this is comparable. The McDonald's
+# spot has 851K likely due to "Priatelia" (Friends TV show) name pull, not creative
+# coherence — confounded. See PREDICTIONS.md caveats.
