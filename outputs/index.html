@@ -111,6 +111,48 @@ a:hover { color: var(--accent); }
 
 .byline a { text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
 
+.masthead-nav {
+    margin: clamp(28px, 3vw, 36px) 0 0;
+    padding-top: clamp(20px, 2.5vw, 28px);
+    border-top: 1px solid var(--rule-soft);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 14px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.masthead-nav a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2px;
+    transition: color 120ms cubic-bezier(0.22, 1, 0.36, 1), border-color 120ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.masthead-nav a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.masthead-nav .nav-primary {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.masthead-nav .nav-primary:hover {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+}
+
+.masthead-nav .nav-sep {
+    color: var(--ink-faint);
+    font-weight: 400;
+}
+
 /* ===== Section labels ===== */
 
 .section-label {
@@ -549,6 +591,13 @@ em, i { font-style: normal; font-weight: 600; }
     <p class="lede">Four artifacts measuring Czech advertising from three sides &mdash; picture, sound, language &mdash; each one a different AI model reading a different signal of brand identity. Plus a multimodal tool that combines all three on any spot URL. Built so a strategist can run the analysis on the client&apos;s next pitch on Monday morning.</p>
     <p class="bio">Data &amp; cloud engineer at Alma Career. Built across a few weekends to test what brand competitive analysis looks like when it starts from public data instead of pitch decks. All four projects open-source; every finding committed publicly before verification (see <a href="https://github.com/sandovabarbora/brand-reflection-cz/blob/main/PREDICTIONS.md">PREDICTIONS.md</a>).</p>
     <p class="byline">By Barbora Šandová &middot; <a href="https://datasimply.eu">datasimply.eu</a> &middot; <a href="https://github.com/sandovabarbora">github.com/sandovabarbora</a></p>
+    <nav class="masthead-nav" aria-label="Skip to">
+        <a href="https://sandovabarbora.github.io/spot-scorer/">Try the live scorer</a>
+        <span class="nav-sep" aria-hidden="true">/</span>
+        <a href="#one-spot-three-lenses">Read the worked case</a>
+        <span class="nav-sep" aria-hidden="true">/</span>
+        <a href="#services" class="nav-primary">Hire for a pitch</a>
+    </nav>
 </header>
 
 <section>
@@ -659,9 +708,9 @@ em, i { font-style: normal; font-weight: 600; }
     </div>
 </section>
 
-<section>
+<section id="one-spot-three-lenses">
     <div class="section-label"><span class="num">02</span><h2>One spot, three lenses</h2></div>
-    <p class="section-intro">A worked example. Pilsner Urquell's image spot is the only spot in the 47-corpus that commits to a world simultaneously by picture <em>and</em> by sound. Here is what that looks like across all four measurement frames.</p>
+    <p class="section-intro">A worked example. Pilsner Urquell&apos;s image spot is the only spot in the 47-corpus that commits to a world simultaneously by picture <em>and</em> by sound. Here is what that looks like across all four measurement frames.</p>
 
     <aside class="case-pull">
         <p class="case-q">Pilsner is the only Czech brand in the corpus that lets <span class="num">music</span> carry the spot, and the picture <span class="num">a world</span>.</p>
@@ -733,7 +782,7 @@ em, i { font-style: normal; font-weight: 600; }
     <p class="synthesis"><strong>The brief Albert almost shipped.</strong> Either commit to <em>both</em> world signals (let the bistro footage carry it; drop the voiceover, raise the music to 50%+, slow tempo) — and you get a Pilsner-shaped image spot. Or commit to <em>both</em> brand signals (raise Albert blue to 40%+ of the picture, keep the voiceover) — and you get a Lidl-shaped promo spot. The current Albert spot picks neither half all the way. The single-line brief: <em>"Pick a coherent world or a coherent promo. The muddle is invisible."</em></p>
 </section>
 
-<section>
+<section id="services">
     <div class="section-label"><span class="num">04</span><h2>What you can hire me to do</h2></div>
     <p class="section-intro">Three concrete services derived from the methodology above. Each ships a single artifact, on a fixed turnaround. Pick one as a pilot; the next conversation tells us whether to scale.</p>
 
