@@ -376,6 +376,71 @@ footer a { color: var(--ink-soft); text-decoration: underline; text-decoration-c
 }
 
 em, i { font-style: normal; font-weight: 600; }
+
+/* ===== Services ===== */
+
+.services {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(28px, 3vw, 40px);
+    margin-bottom: clamp(48px, 5vw, 72px);
+}
+
+.service {
+    display: grid;
+    grid-template-columns: clamp(48px, 5vw, 64px) 1fr;
+    gap: clamp(20px, 2vw, 32px);
+    padding-bottom: clamp(24px, 3vw, 32px);
+    border-bottom: 1px solid var(--rule-soft);
+}
+
+.service:last-child { border-bottom: none; }
+
+.service-num {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(32px, 4vw, 48px);
+    color: var(--accent);
+    line-height: 1;
+    margin: 0;
+}
+
+.service h3 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(20px, 2vw, 26px);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    margin: 0 0 12px;
+    color: var(--ink);
+    max-width: 32ch;
+}
+
+.service-deliverable {
+    margin: 0 0 12px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 62ch;
+}
+
+.service-spec {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    letter-spacing: 0.01em;
+}
+
+.service-spec strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+@media (max-width: 640px) {
+    .service { grid-template-columns: 1fr; gap: 8px; }
+}
 </style>
 </head>
 <body>
@@ -384,7 +449,7 @@ em, i { font-style: normal; font-weight: 600; }
 <header class="masthead">
     <p class="eyebrow">A research portfolio &middot; spring 2026</p>
     <h1>Brand has three layers, and most agencies measure none of them.</h1>
-    <p class="lede">A series of four artifacts that measure Czech advertising from three sides: how it <em>looks</em>, how it <em>sounds</em>, and where it <em>stands</em>. Plus one tool that combines them into a single brief-ready score for any video URL.</p>
+    <p class="lede">A series of four artifacts measuring Czech advertising from three sides: how it <em>looks</em>, how it <em>sounds</em>, and where it <em>stands</em>. Plus one tool that turns the measurements into a numerical brief for any video URL. Built so a strategist can run the analysis on the client's next pitch on Monday morning.</p>
     <p class="byline">By Barbora Šandová &middot; <a href="https://datasimply.eu">datasimply.eu</a></p>
 </header>
 
@@ -571,13 +636,39 @@ em, i { font-style: normal; font-weight: 600; }
 </section>
 
 <section>
+    <div class="section-label"><span class="num">04</span><h2>What you can hire me to do</h2></div>
+    <p class="section-intro">Three concrete services derived from the methodology above. Each ships a single artifact, on a fixed turnaround. Pick one as a pilot; the next conversation tells us whether to scale.</p>
+
+    <div class="services">
+        <article class="service">
+            <p class="service-num">01</p>
+            <h3>Competitive scan for an active pitch</h3>
+            <p class="service-deliverable">5–8 spots from the client's category + 3 competitors, run through color + sound + topography. One slide deck with: where the category lives on the map, where the client currently sits, where the client could land to be distinctive, and the numerical brief for getting there.</p>
+            <p class="service-spec"><strong>Turnaround:</strong> 4 working days · <strong>Output:</strong> 8–10 slide deck + raw data · <strong>Best for:</strong> the pitch presentation slide you wish you had a number behind</p>
+        </article>
+
+        <article class="service">
+            <p class="service-num">02</p>
+            <h3>Spot scoring + 1-pager for any draft URL</h3>
+            <p class="service-deliverable">Single video URL in → 1-page brief out, in the same shape as the <a href="https://github.com/sandovabarbora/brand-reflection-cz/blob/main/ONE_PAGER_TEMPLATE.draft.md">McDonald's sample</a>. Three numerical findings, color reading, sound reading, position reading, single strategic synthesis with a specific next-spot recommendation.</p>
+            <p class="service-spec"><strong>Turnaround:</strong> 24 hours · <strong>Output:</strong> 1 PDF / Notion page · <strong>Best for:</strong> a dailies-review checkpoint, or feedback on a finished cut before client sign-off</p>
+        </article>
+
+        <article class="service">
+            <p class="service-num">03</p>
+            <h3>Pre-shoot brief audit</h3>
+            <p class="service-deliverable">Before greenlight, score the client's current homepage + their last three published spots + their three nearest competitors. Identify which "homepage template" the brand is trapped in. Generate the numerical creative brief that would move them out. Catch the drift in the brief stage, before the shoot.</p>
+            <p class="service-spec"><strong>Turnaround:</strong> 3 working days · <strong>Output:</strong> 1 numerical brief + 1 strategic synthesis page · <strong>Best for:</strong> the upstream conversation with the creative director, before storyboarding</p>
+        </article>
+    </div>
+
     <div class="cta">
-        <h3>For a strategist, creative director, or hiring lead.</h3>
-        <p>I'd love to walk through any of this with you in 30 minutes. The methodology adapts to any 10-spot competitive set; the four artifacts above are starter benchmarks, not the limit.</p>
+        <h3>30-minute walkthrough, no pitch attached.</h3>
+        <p>Show me one of your active client briefs or a recent shipped spot. I'll run it through the toolkit live and walk you through the output. No deck, no pre-work from you. Most useful when you have a real ongoing pitch I can demo against, not a hypothetical.</p>
         <div class="cta-actions">
-            <a class="primary" href="mailto:barbora@datasimply.eu">Email Barbora</a>
+            <a class="primary" href="mailto:barbora@datasimply.eu?subject=30-min%20walkthrough%20%E2%80%94%20Brand%20Reflection">Email Barbora</a>
+            <a href="https://github.com/sandovabarbora/brand-reflection-cz/blob/main/PREDICTIONS.md">I commit to checks publicly →</a>
             <a href="https://datasimply.eu">datasimply.eu</a>
-            <a href="https://github.com/sandovabarbora">GitHub</a>
         </div>
     </div>
 </section>
