@@ -80,6 +80,29 @@ a:hover { color: var(--accent); }
     max-width: 56ch;
 }
 
+.bio {
+    margin: clamp(20px, 2.5vw, 28px) 0 14px;
+    padding-top: clamp(20px, 2.5vw, 28px);
+    border-top: 1px solid var(--rule-soft);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 58ch;
+}
+
+.bio a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+}
+
+.bio a:hover {
+    border-bottom-color: var(--accent);
+    color: var(--accent);
+}
+
 .byline {
     font-size: 13px;
     color: var(--ink-soft);
@@ -341,6 +364,80 @@ a:hover { color: var(--accent); }
 .cta-actions a:hover { border-color: var(--accent); color: var(--accent); }
 .cta-actions a.primary:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
 
+/* ===== Honest disclosure ===== */
+
+.honest {
+    margin-top: clamp(40px, 5vw, 56px);
+    padding-top: clamp(28px, 3vw, 36px);
+    border-top: 1px solid var(--rule);
+}
+
+.honest > summary {
+    list-style: none;
+    cursor: pointer;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(15px, 1.5vw, 17px);
+    color: var(--ink);
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+}
+
+.honest > summary::-webkit-details-marker { display: none; }
+
+.honest > summary::before {
+    content: "+";
+    font-family: var(--serif);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--accent);
+    line-height: 1;
+    width: 18px;
+    flex-shrink: 0;
+}
+
+.honest[open] > summary::before { content: "\2013"; }
+
+.honest > summary:hover { color: var(--accent); }
+
+.honest-body {
+    margin-top: clamp(22px, 2.6vw, 32px);
+    padding-left: 32px;
+}
+
+.honest-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: clamp(18px, 2vw, 24px);
+}
+
+.honest-list li {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 70ch;
+    padding-left: 18px;
+    position: relative;
+}
+
+.honest-list li::before {
+    content: "\2014";
+    position: absolute;
+    left: 0;
+    color: var(--ink-faint);
+}
+
+.honest-list strong { font-weight: 700; color: var(--ink); }
+
+@media (max-width: 640px) {
+    .honest-body { padding-left: 0; }
+}
+
 /* ===== Footer ===== */
 
 footer {
@@ -448,9 +545,10 @@ em, i { font-style: normal; font-weight: 600; }
 
 <header class="masthead">
     <p class="eyebrow">A research portfolio &middot; spring 2026</p>
-    <h1>Brand has three layers, and most agencies measure none of them.</h1>
-    <p class="lede">A series of four artifacts measuring Czech advertising from three sides: how it <em>looks</em>, how it <em>sounds</em>, and where it <em>stands</em>. Plus one tool that turns the measurements into a numerical brief for any video URL. Built so a strategist can run the analysis on the client's next pitch on Monday morning.</p>
-    <p class="byline">By Barbora Šandová &middot; <a href="https://datasimply.eu">datasimply.eu</a></p>
+    <h1>Strategy decks talk about brand. This series measures it.</h1>
+    <p class="lede">Four artifacts measuring Czech advertising from three sides: how it <em>looks</em>, how it <em>sounds</em>, and where it <em>stands</em>. Plus one tool that turns the measurements into a numerical brief for any video URL. Built so a strategist can run the analysis on the client&apos;s next pitch on Monday morning.</p>
+    <p class="bio">Data &amp; cloud engineer at Alma Career. Built across a few weekends to test what brand competitive analysis looks like when it starts from public data instead of pitch decks. All four projects open-source; every finding committed publicly before verification (see <a href="https://github.com/sandovabarbora/brand-reflection-cz/blob/main/PREDICTIONS.md">PREDICTIONS.md</a>).</p>
+    <p class="byline">By Barbora Šandová &middot; <a href="https://datasimply.eu">datasimply.eu</a> &middot; <a href="https://github.com/sandovabarbora">github.com/sandovabarbora</a></p>
 </header>
 
 <section>
@@ -477,7 +575,7 @@ em, i { font-style: normal; font-weight: 600; }
                 <p class="episode-num">Episode 1</p>
                 <h3 class="episode-title">Color fingerprint</h3>
             </div>
-            <p class="episode-body">47 Czech TV spots, K-means in CIE-LAB. Hero question: brand color, or world color? 16 commit to brand, 11 commit to a world, 20 sit in between.</p>
+            <p class="episode-body">Most Czech TV spots aren&apos;t trying to be distinctive. Of 47, only 16 commit to brand color and 11 to a world; 20 sit in the muddle in between. The map shows which camp each spot is in &mdash; and which ones are pretending.</p>
             <p class="episode-link">Visit the report</p>
         </a>
 
@@ -501,7 +599,7 @@ em, i { font-style: normal; font-weight: 600; }
                 <p class="episode-num">Episode 1.5</p>
                 <h3 class="episode-title">Sound fingerprint</h3>
             </div>
-            <p class="episode-body">Same 47 spots, audio analysis with librosa + silero-vad. Hero question: voice, or music? 44 voice-led, 3 music-led, no middle. Pilsner is the only outlier.</p>
+            <p class="episode-body">Voice carries 44 of 47 Czech spots. Music carries 3. Pilsner Urquell is the only brand in the corpus that lets music do the lifting &mdash; and the color report independently says it&apos;s also their most committed visual. Two pipelines, one finding about one brand.</p>
             <p class="episode-link">Visit the report</p>
         </a>
 
@@ -529,7 +627,7 @@ em, i { font-style: normal; font-weight: 600; }
                 <p class="episode-num">Episode 2</p>
                 <h3 class="episode-title">Strategic topography</h3>
             </div>
-            <p class="episode-body">24 brand homepages + 30 rising Czech queries, embedded with multilingual-e5 and projected to 2D. The map shows red oceans, isolated voices, and where trends sit.</p>
+            <p class="episode-body">All five Czech banks plus &#268;EZ plus &#352;koda Auto share one homepage template. Eight brands, four sectors, one neighborhood &mdash; the boundaries we draw at the campaign level dissolve on the homepage layer. Click any brand to generate its repositioning brief.</p>
             <p class="episode-link">Visit the report</p>
         </a>
 
@@ -555,7 +653,7 @@ em, i { font-style: normal; font-weight: 600; }
                 <p class="episode-num">Tool</p>
                 <h3 class="episode-title">Spot Scorer</h3>
             </div>
-            <p class="episode-body">Paste any YouTube / Facebook / Instagram URL. Get color + audio metrics, sector benchmark context, and 3-5 numerical targets a distinctive spot would need to hit.</p>
+            <p class="episode-body">Paste any YouTube / Facebook / Instagram URL. Get color + audio scores against the sector benchmark, plus a numerical brief: the 3&ndash;5 measurable targets a distinctive spot in that sector needs to hit. Live backend, real numbers, ~25s per spot.</p>
             <p class="episode-link">Open the tool</p>
         </a>
     </div>
@@ -664,13 +762,26 @@ em, i { font-style: normal; font-weight: 600; }
 
     <div class="cta">
         <h3>30-minute walkthrough, no pitch attached.</h3>
-        <p>Show me one of your active client briefs or a recent shipped spot. I'll run it through the toolkit live and walk you through the output. No deck, no pre-work from you. Most useful when you have a real ongoing pitch I can demo against, not a hypothetical.</p>
+        <p>Show me one of your active client briefs or a recent shipped spot. I&apos;ll run it through the toolkit live and walk you through the output. No deck, no pre-work from you. Most useful when you have a real ongoing pitch I can demo against, not a hypothetical.</p>
         <div class="cta-actions">
             <a class="primary" href="mailto:barbora@datasimply.eu?subject=30-min%20walkthrough%20%E2%80%94%20Brand%20Reflection">Email Barbora</a>
-            <a href="https://github.com/sandovabarbora/brand-reflection-cz/blob/main/PREDICTIONS.md">I commit to checks publicly →</a>
+            <a href="https://github.com/sandovabarbora/brand-reflection-cz/blob/main/PREDICTIONS.md">I commit to checks publicly &rarr;</a>
             <a href="https://datasimply.eu">datasimply.eu</a>
         </div>
     </div>
+
+    <details class="honest">
+        <summary>What this is and isn&apos;t</summary>
+        <div class="honest-body">
+            <ul class="honest-list">
+                <li><strong>One person, no agency overhead.</strong> Everything on this page was built solo. Turnaround times reflect a single operator with finite capacity, not a team. Three concurrent engagements is realistic; ten is not.</li>
+                <li><strong>No past commercial engagements for this toolkit.</strong> This is the launch. Pilot pricing for the first three clients; I will say so on the call. The methodology has been stress-tested on 47 public spots and 24 public homepages, not on confidential client data.</li>
+                <li><strong>Exploratory analysis, not peer-reviewed methodology.</strong> Each episode has a Limits block in its own report (see e.g. Episode 2&apos;s appendix). Sample sizes are small (n=47 spots, n=24 brands), models are general-purpose, recommendations are starting points for a strategist&apos;s judgment, not directives.</li>
+                <li><strong>All work open-source.</strong> Every repo is MIT-licensed, every dataset CC-BY-4.0. The code that produced any finding on this page can be re-run by a stranger in an evening. PREDICTIONS.md commits each finding before a verification window so I cannot post-hoc edit my way out of being wrong.</li>
+                <li><strong>The tools are first drafts that work.</strong> Spot Scorer can fail on YouTube videos that hit a bot challenge; the topography brief generator is mechanical and sometimes recommends strategically wrong directions (it says Pilsner should drift toward Lidl, which is obviously not the move). Both reports name those limits where they appear.</li>
+            </ul>
+        </div>
+    </details>
 </section>
 
 <footer>
